@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+    @author Alvaro Fraga Arnaiz
+-->
+<html>
+    <head>
+        <title>Calculadora sencilla para practicar js</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Calculadora</div>
+        <script>
+            /*
+             * declaracion de variables
+             */
+            var resultado = 0;
+            var memoria = 0;
+   
+            /*
+             * 
+             * @returns {Number|resultado|multiplicar.campoNumerico}
+             */
+            function sumar() {
+                var campoNumerico = parseInt(document.getElementById("campoNumerico").value);
+                resultado += campoNumerico;
+                //imprimir el valor
+                document.getElementById('campoNumerico').value = "0";
+                document.getElementById('resultado').innerHTML = resultado;
+                return resultado;
+            }
+
+            function restar() {
+
+                var campoNumerico = parseInt(document.getElementById("campoNumerico").value);
+                resultado -= campoNumerico;
+                document.getElementById('campoNumerico').value = "0";
+                document.getElementById('resultado').innerHTML = resultado;
+                return resultado;
+            }
+
+            function multiplicar() {
+                var campoNumerico = parseInt(document.getElementById("campoNumerico").value);
+                if (resultado == '0') {
+                    resultado = 1;
+                    resultado = campoNumerico * resultado;
+                } else {
+                    resultado = campoNumerico * resultado;
+                }
+                document.getElementById('resultado').innerHTML = resultado;
+                return resultado;
+            }
+
+            function dividir() {
+                var campoNumerico = parseInt(document.getElementById("campoNumerico").value);
+                if (resultado == '0') {
+                    resultado = 1;
+                    resultado = campoNumerico / resultado;
+                } else {
+                    resultado = campoNumerico / resultado;
+                }
+                console.log(resultado);
+                document.getElementById('resultado').innerHTML = resultado;
+                return resultado;
+
+            }
+            function limpiar() {
+                resultado = 0;
+                document.getElementById('resultado').innerHTML = "0";
+                document.getElementById('campoNumerico').value = "0";
+            }
+            function memorizar() {
+                document.getElementById('memoria').value = resultado;
+                document.getElementById('memoria').innerHTML = resultado;
+                limpiar();
+                return memoria;
+            }
+            function retrieveMemo() {
+                memoria = document.getElementById('memoria').value;
+                document.getElementById('campoNumerico').value = memoria;
+                document.getElementById('memoria').innerHTML = "";
+            }
+            
+            /*
+             * @argumento simbolo del boton pulsado
+             */
+            function botonValor(boton){
+               console.log(boton.value);
+               calculate(boton.value);
+            }
+           
+           /*
+            * determina la operacion a realizar
+            */
+            function calculate(op){
+                switch(op){
+                    case "+":
+                        sumar();
+                        break;
+                    case "-":
+                        restar();
+                        break;
+                    case "*":
+                        multiplicar();
+                        break;
+                    case "/":
+                        dividir();
+                        break;
+                    default:
+                        alert('operacion nopermitida');
+                        break;
+                        
+                 }
+            }
+            
+            
+            
+        </script>
+        <!--
+       Div con los botones de las opraciones
+        -->
+        <div id="operaciones">
+            <input type="text" id="campoNumerico" value="">Insertar numeros;
+            <input type="button" id="op_suma" value="+" onclick="botonValor(this)">
+            <input type="button" id="op_resta" value="-" onclick="botonValor(this)">
+            <input type="button" id="op_multiplicar" value="*" onclick="botonValor(this)">
+            <input type="button" id="op_dividir" value="/" onclick="botonValor(this)">
+            <input type="button" id="op_clear" value="C" onclick="limpiar()">
+            <input type="button" id="memo" value="M" onclick="memorizar()">
+            <input type="button" id="MR" value="MR" onclick="retrieveMemo()">
+        </div>
+        <p> Resultado de la operacion</p>
+        <p id="resultado"></p>
+        <p> Numero almacenado</p>
+        <p id="memoria"></p>
+    </body>
+</html>

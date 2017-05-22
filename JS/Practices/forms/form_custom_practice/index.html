@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prueba de formulario (practica libre)</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>formulario de prueba</div>
+        <form id="formulario" name="formulario" >
+            <input type="text" id="nombre">Nombre
+            <input type="text" id='apellido'>Apellidos
+            <input type="email" id='email'>email
+            <select name="facciones" id="facciones">
+                <option value="Space Marines" >Space Marines</option>
+                <option value="Sin Faccion" selected>Sin faccion</option>
+                <option value="Orkos">Orkos</option>
+                <option value="Taus">Taus</option>       
+            </select>
+            
+            <fieldset id="botnonera">
+            <input type="submit" value="enviar" onclick="dataRetriver()" />
+            <input type="reset" value="limpiar" />
+            </fieldset>        
+        </form>   
+        <script>
+            function dataRetriver() {
+               var nombre= document.formulario.nombre.value;
+               var apellido= document.formulario.apellido.value;
+               var facciones= document.formulario.facciones.value;
+               alert(nombre + apellido+ facciones);
+            }
+        </script>
+    </body>
+</html>
