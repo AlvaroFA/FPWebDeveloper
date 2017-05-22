@@ -1,10 +1,10 @@
-# #Javascript
-Practice coding for JS
+# #JAVA
+Practices and tasks for java
 
 
-# #Simple Calculator v1.0
+# ##Task1
+Basic usage array, System and for,if loops
 
-..* Added first version include:SUM, MMINUS, MULTIPLY, DIVIDE AND MEMORY functions
-..* Simple web design
+
 
 
