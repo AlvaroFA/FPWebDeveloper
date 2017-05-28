@@ -14,6 +14,14 @@ Create a form to collect and validate data.Ths task include example of:
 - Xml Creation
 - Stream usages
 
+## Practice-Java
+
+Include solution for exam and practice of creating a simple agenda, in these projects:
+
+- Methods of stream
+- Views with javaFX
+- Simple CRÜD
+- Local Storeage in File
 
 
 
