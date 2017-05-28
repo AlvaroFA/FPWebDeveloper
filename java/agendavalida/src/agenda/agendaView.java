@@ -9,10 +9,7 @@ import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -38,8 +35,7 @@ public class agendaView extends javax.swing.JFrame {
             model.addRow(new Object[]{per.getNombre(), per.getApellidos(), per.getTelefono()});
             lista.add(per);
         }
-        RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-        jTable1.setRowSorter(sorter);
+
     }
 
     /**
@@ -64,7 +60,6 @@ public class agendaView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -134,13 +129,6 @@ public class agendaView extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Refrescar");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,7 +140,7 @@ public class agendaView extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 10, Short.MAX_VALUE))
+                                .addGap(0, 13, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -169,16 +157,11 @@ public class agendaView extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(86, 86, 86)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,8 +185,6 @@ public class agendaView extends javax.swing.JFrame {
                         .addComponent(jButton3)
                         .addGap(26, 26, 26)
                         .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2)))
                 .addContainerGap(70, Short.MAX_VALUE))
@@ -243,39 +224,13 @@ public class agendaView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int dialogButton = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(null, "Salir?", "Warning", dialogButton);
-        if (dialogResult == JOptionPane.YES_OPTION) {
-            System.exit(0);
-        }
-        
+
+        System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        if (jTextField1.getText().equals("") && jTextField2.getText().equals("") && jTextField3.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Sin Criterios de busqueda, mostrando todos");
-        } else {
-            String nom = jTextField1.getText();
-            String ape = jTextField2.getText();
-            String tel = jTextField3.getText();
-            boolean encontrado = false;
-            model.setRowCount(0);
-            for (Persona p : lista) {
-                if ((!nom.isEmpty() && p.getNombre().contains(nom))
-                        || (!ape.isEmpty() && p.getApellidos().contains(ape))
-                        || (!tel.isEmpty() && p.getTelefono().contains(tel))) {
-                    encontrado = true;
-                    model.addRow(new Object[]{p.getNombre(), p.getApellidos(), p.getTelefono()});
-                } else {
-                    encontrado = false;
-                }
-            }
-            if (encontrado == false) {
-                JOptionPane.showMessageDialog(this, "sin resultados");
-            }
 
-        }
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -293,7 +248,7 @@ public class agendaView extends javax.swing.JFrame {
                 lista.remove(p);
                 model.removeRow(rowNumber);
                 a.writeListaPersonas(lista);
-                JOptionPane.showMessageDialog(this, "Persona " + p.getNombre() + " eliminada");
+                JOptionPane.showMessageDialog(this, "Persona " + p.getNombre()+ " eliminada");
             } else {
                 System.err.println("Esto no deberia de pasar: los valores de la tabla vienen fijados en el archivo y la "
                         + "tabla no es editable, no obstante el valor Persona seleccionada  no esta "
@@ -301,20 +256,6 @@ public class agendaView extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0);
-        if (model.getRowCount() != lista.size()) {
-            for (Persona per : a.readPersonas()) {
-                model.addRow(new Object[]{per.getNombre(), per.getApellidos(), per.getTelefono()});
-                lista.add(per);
-            }
-        }
-    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -361,7 +302,6 @@ public class agendaView extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
