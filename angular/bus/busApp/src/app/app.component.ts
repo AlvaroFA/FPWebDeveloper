@@ -1,5 +1,5 @@
-import {OnInit, OnDestroy, Component } from '@angular/core';
-import { Route } from '../model/route.model';
+import {OnInit, OnDestroy, Component} from '@angular/core';
+import {Route} from '../model/route.model';
 import {Subscription} from 'rxjs/Subscription';
 import {Observable} from 'rxjs/Observable';
 import {BusService} from '../services/busService';
@@ -12,7 +12,6 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'Horario autobuses';
   routes: Observable<Route[]>;
   subscription: Subscription;
-  jsonData: any;
 
 
   constructor(private service: BusService) {
@@ -24,10 +23,12 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-  //this.routes= this.service.getRoutes();
-   this.service.getData().subscribe(data => {this.jsonData = data;
-   }
-   )
+    // this.routes= this.service.getRoutes();
+    this.routes = this.service.getRoutes()
+    //   .subscribe(data => {
+    //   return this.jsonData = data;
+    // })
+    ;
   }
 
 

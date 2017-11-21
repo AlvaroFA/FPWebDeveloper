@@ -3,9 +3,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BusService} from '../services/busService';
 import {HttpModule} from '@angular/http';
-import {RoutesPipe} from '../model/routes.pipe';
 import { KeysPipe} from '../model/test.pipe';
-
 
 @NgModule({
   declarations: [

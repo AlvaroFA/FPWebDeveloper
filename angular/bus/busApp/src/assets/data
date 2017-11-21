@@ -2,7 +2,7 @@
   {
     "name": "Santiago (Est. Autobuses) - Milladoiro",
     "per": "Salidas a las 17:00",
-    "stops ": [
+    "stops": [
       {
         "id": "1",
         "time_from_previous":  "0"
