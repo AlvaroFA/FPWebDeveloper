@@ -10,28 +10,39 @@
 
 <header>
     <nav id="menuCabecera">
+        <ul id="enlaces">
+            <li class="enlace"><a href="_blank">Home</a></li>
+            <li class="enlace"><a href="_blank">Utilidades</a></li>
+            <li class="enlace"><a href="_blank">Otro</a></li>
+            <li class="enlace"><a href="_blank">mas</a></li>
+        </ul>
     </nav>
 </header>
 <nav id="menuLateralIzquierdo">
+    <h2 class="titulo">Ejercicio con Ventana</h2>
+    <div class="botonera">
     <input type="button" class="popUp" onclick="abrirVentana()" value="Abrir Ventana"></input>
     <input type="button" class="popUp" onclick="cerrarVentana()" value="cerrarVentana"></input>
     <input type="button" class="popUp" onclick="moverVentana()" value="moverVentana"></input>
     <input type="button" class="popUp" onclick="redimensionarVentana()" value="redimensionarVentana"></input>
     <input type="button" class="popUp" onclick="desplazarVentana()" value="desplazarVentana"></input>
+        </div>
 </nav>
 <section id="cuerpoCentral">
-    <input type="button" id="fechaBtn" onclick="mostrarFecha()" value="Mostrar fecha"></input>
+    <input type="button" class="popUp" onclick="mostrarFecha()" value="Mostrar fecha"></input>
     <article id="fecha">
     </article>
 </section>
 <nav id="menuLateralDerecho">
-    <input type="button" id="areaBtn" onclick="calcularAreaCirculo()" value="Calcular Area"></input>
-    <input type="button" id="areaAng" onclick="trigonomiaAngulo()" value="Trigonometría"></input>
-
+    <h2 class="titulo">Ejercicio con Matematicas </h2>
+    <div class="botonera">
+    <input type="button" class="popUp" onclick="calcularAreaCirculo()" value="Calcular Area"></input>
+    <input type="button" class="popUp" onclick="trigonomiaAngulo()" value="Trigonometría"></input>
+    </div>
     <article id="area">
     </article>
 </nav>
 </body>
-<footer>
+<footer id="footer">
 </footer>
 </html>

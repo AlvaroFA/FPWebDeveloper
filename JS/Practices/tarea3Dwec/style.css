@@ -37,7 +37,7 @@
      border-width:5px;
      border-style: solid;
      border-radius: 5px;
-     height:10%;
+     height:5%;
      width:99%;
      display:inline-block;
      margin-top: 1%;
@@ -58,12 +58,17 @@
 
  }
 
+ #cuerpoCentral .popUp{
+     margin-left: 20%;
+     margin-top: 10%;
+ }
+
  #footer{
      border-color: white;
      border-width:5px;
      border-style: solid;
      border-radius: 5px;
-     height:10%;
+     height:5%;
      width:99%;
      display:inline-block;
      margin-top: 1%;
@@ -79,15 +84,33 @@
      margin: 0px;
  }
 
- #enlaces .enlace
+ #menuCabecera #enlaces .enlace
  {
      list-style-type: none;
      display: inline;
      padding-right: 5px;
+     text-decoration: none;
+
+ }
+
+ #menuCabecera #enlaces .enlace a{
+     text-decoration: none;
+     color: black;
  }
  #enlaces{
      margin-left: 20%;
-     vertical-align: bottom;
-     text-decoration: ;
+     margin-right: 65%;
+     margin-top: 1%;
+     margin-bottom: 0%;
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+ }
 
+ .botonera{
+     margin-left: 30%;
+ }
+ .titulo{
+     margin-left: 25%;
  }
