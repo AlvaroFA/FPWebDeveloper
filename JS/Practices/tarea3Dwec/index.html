@@ -3,6 +3,7 @@
     <meta charset="utf-8" />
     <script src="js/fechas.js"></script>
     <script src="js/ventana.js"></script>
+    <script src="js/mates.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -12,15 +13,23 @@
     </nav>
 </header>
 <nav id="menuLateralIzquierdo">
-    <input type="button" id="popUp" onclick="abrirVentana()" value="Abrir Ventana">ventana</input>
+    <input type="button" class="popUp" onclick="abrirVentana()" value="Abrir Ventana"></input>
+    <input type="button" class="popUp" onclick="cerrarVentana()" value="cerrarVentana"></input>
+    <input type="button" class="popUp" onclick="moverVentana()" value="moverVentana"></input>
+    <input type="button" class="popUp" onclick="redimensionarVentana()" value="redimensionarVentana"></input>
+    <input type="button" class="popUp" onclick="desplazarVentana()" value="desplazarVentana"></input>
 </nav>
 <section id="cuerpoCentral">
-    <input type="button" id="fechaBtn" onclick="mostrarFecha()" value="Mostrar fecha">Mostrar fecha</input>
+    <input type="button" id="fechaBtn" onclick="mostrarFecha()" value="Mostrar fecha"></input>
     <article id="fecha">
     </article>
 </section>
 <nav id="menuLateralDerecho">
+    <input type="button" id="areaBtn" onclick="calcularAreaCirculo()" value="Calcular Area"></input>
+    <input type="button" id="areaAng" onclick="trigonomiaAngulo()" value="Trigonometría"></input>
 
+    <article id="area">
+    </article>
 </nav>
 </body>
 <footer>
