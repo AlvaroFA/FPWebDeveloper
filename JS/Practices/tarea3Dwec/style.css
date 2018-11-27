@@ -1,16 +1,93 @@
  * {
     background-color: lightblue;
+     font-family: Calibri,Arial;
 }
 
  #menuLateralIzquierdo {
-     background-color: white;
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+     height:80%;
+     width: 20%;
+     float: left;
  }
 
+ .popUp{
+     width: 50%;
+     background-color: white;
+     margin-top: 15px;
+     margin-bottom: 15px;
+     border-color: white;
+     border:  5px;
+ }
 
  #menuLateralDerecho {
-     background-color: white;
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+     height:80%;
+     width: 20%;
+     float: right;
  }
 
  #menuCabecera{
-     background-color: white;
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+     height:10%;
+     width:99%;
+     display:inline-block;
+     margin-top: 1%;
+     margin-bottom: 1%;
+ }
+
+ #cuerpoCentral{
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+     height:80%;
+     width:56%;
+     display:inline-block;
+     margin-left: 1%;
+     margin-right: 1%;
+
+
+ }
+
+ #footer{
+     border-color: white;
+     border-width:5px;
+     border-style: solid;
+     border-radius: 5px;
+     height:10%;
+     width:99%;
+     display:inline-block;
+     margin-top: 1%;
+     margin-bottom: 1%;
+ }
+
+ #listacontenedor
+ {
+     padding-right: 0px;
+     padding-left: 0px;
+     padding-bottom: 0px;
+     padding-top: 0px;
+     margin: 0px;
+ }
+
+ #enlaces .enlace
+ {
+     list-style-type: none;
+     display: inline;
+     padding-right: 5px;
+ }
+ #enlaces{
+     margin-left: 20%;
+     vertical-align: bottom;
+     text-decoration: ;
+
  }
